@@ -15,7 +15,7 @@ after_success:
     - docker build -t chrisbabu/multi-server ./server
     - docker build -t chrisbabu/multi-worker ./worker
     # Log in to the docker hub
-    - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin docker.io
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
 
     # Take this image and push to docker hub
     - docker push chrisbabu/multi-client
